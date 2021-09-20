@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Be Vietnam Pro', sans-serif;
+}
+:root {
+    --light: #FBF263;
+    --lightMid: #A6B63D;
+    --darkMid: #22241f;
+    --dark: #242622;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap');
+
+body{
+    max-width: 100vw;
+    background-color: var(--dark);
+    position: relative;
+}
+.bigLogoBox{
+    position: absolute;
+}
+.pathBigLogo{
+    fill: var(--darkMid);
+}
+
+/* top section */
+
+.topSection{
+    width: 100%;
+    height: 100vh;
+    border: 1px solid red;
+}
