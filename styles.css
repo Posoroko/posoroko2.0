@@ -58,7 +58,8 @@ body{
 .topTitle{
     font-weight: 200;
     line-height:0.8em;
-    writing-mode: sideways-lr;
+    writing-mode: vertical-rl;
+    transform: rotateZ(180deg);
 }
 .subtitleBox{
     height: 80%;
