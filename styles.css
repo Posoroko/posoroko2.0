@@ -3,12 +3,15 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Be Vietnam Pro', sans-serif;
+    user-select: none;
 }
 :root {
     --light: #f3e9e0;
     --lightMid: #A6B63D;
-    --darkMid: #2d2f29;
-    --dark: #242622;
+    --darkMid: #375248;
+    --dark: #375a4d;
+    /*--dark: #242622;
+    --darkMid: #272925;*/
     font-size: 62.5%;
 }
 
@@ -30,6 +33,22 @@ body{
     background-color: var(--dark);
     position: relative;
 }
+.menuPanel{
+    position: fixed;
+    top: 0;
+    right: 10%;
+    border: 1px solid red;
+}
+.menuPanelOpen{
+    position: fixed;
+    bottom: 0;
+    right: 0%;
+    border: 1px solid red;
+}
+.menuText{
+    font-size: min(40px, 10vw);
+    line-height: 0.7em;
+}
 .bigLogoBox{
     position: absolute;
     z-index: -1;
@@ -39,6 +58,15 @@ body{
 }
 .pathBigLogo{
     fill: var(--darkMid);
+    animation:2000ms linear blurLoop alternate infinite;
+}
+@keyframes blurLoop {
+    from{
+        
+    }
+    to{
+        
+    }
 }
 
 /* top section */
@@ -53,14 +81,29 @@ body{
 }
 .topTitleBox{
     height: 80%;
-    
+    transform: rotateZ(180deg);
 }
 .topTitle{
     font-weight: 200;
     line-height:0.8em;
     writing-mode: vertical-rl;
-    transform: rotateZ(180deg);
+    text-shadow: 0 0 10px black;
+    filter: blur(0.5px);
+    animation: 1000ms ease-out slideIn;
 }
+@keyframes slideIn{
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+}
+
+
+
 .subtitleBox{
     height: 80%;
     display: flex;
@@ -70,7 +113,21 @@ body{
     font-size: 2rem;
     font-weight: 100;
     padding: 0px 0px 5px 25px;
+    text-shadow: 0 0 15px rgb(48, 48, 48);
+    filter: blur(0.4px);
+    animation: 1000ms ease-out blurIn;
 }
+@keyframes blurIn {
+    from{
+        filter: blur(100px);
+    }
+    to{
+        filter: blur(0px);
+    }
+}
+
+
+
 .motoSection{
     width: 100%;
     height: 60vh;
@@ -82,8 +139,10 @@ body{
 }
 .moto{
     font-size: max(2rem, 2.5vw);
-    font-weight: 200;
+    font-weight: 100;
     text-align: end;
+    text-shadow: 0 0 15px rgb(48, 48, 48);
+    filter: blur(0.5px);
 }
 .whoSection{
     width: 100%;
@@ -98,6 +157,7 @@ body{
 }
 .photoEric{
     width: 100%;
+    box-shadow: 0 0 15px;
 }
 .ericName{
     font-weight: 100;
@@ -112,7 +172,4 @@ body{
     position: absolute;
     bottom: -5%;
     left: 2vw;
-}
-.trad{
-    user-select: none;
 }
