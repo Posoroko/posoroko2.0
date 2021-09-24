@@ -34,6 +34,8 @@ body{
     position: absolute;
     z-index: -1;
     width: 100%;
+    top: 0px;
+    filter: blur(2px);
 }
 .pathBigLogo{
     fill: var(--darkMid);
@@ -51,11 +53,11 @@ body{
 }
 .topTitleBox{
     height: 80%;
+    
 }
 .topTitle{
     font-weight: 200;
     line-height:0.8em;
-    /*transform: rotateZ(-90deg);*/
     writing-mode: sideways-lr;
 }
 .subtitleBox{
@@ -89,7 +91,7 @@ body{
     justify-content: center;
 }
 .photoEricBox{
-    width: min(90%, 1200px);
+    width: 90%;
     position: relative;
     overflow: visible;
 }
@@ -97,7 +99,6 @@ body{
     width: 100%;
 }
 .ericName{
-    font-size: max(1rem, 3vw);
     font-weight: 100;
     padding: 1rem 0rem;
     position: absolute;
@@ -110,4 +111,7 @@ body{
     position: absolute;
     bottom: -5%;
     left: 2vw;
+}
+.trad{
+    user-select: none;
 }
