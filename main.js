@@ -14,6 +14,10 @@ const logoTradBox_div = document.getElementById('logoTradBox')
 
 const photoEric_img = document.getElementById('photoEric');
 
+const funkyPath_path = document.getElementById('funkyPath');
+funkyPath_path.style.strokeDasharray = funkyPath_path.getTotalLength();
+funkyPath_path.style.strokeDashoffset = funkyPath_path.getTotalLength();
+
 const texts = {
     moto: {
         fr: `Définir vos besoin, votre image et vos objectifs.<br>
@@ -58,6 +62,8 @@ function handleClick(e) {
 function handleScroll() {
     let gap = window.scrollY * 0.5;
     bigLogoBox_div.style.marginTop = gap + 'px';
+    console.log(window.scrollY);
+    funkyPath_path.style.strokeDashoffset = 2615 - window.scrollY * 0.9;
 }
 
 //traduit n'importequelle cible ayant la classs 'trad'

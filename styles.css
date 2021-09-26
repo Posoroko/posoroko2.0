@@ -34,6 +34,16 @@ body{
     position: relative;
     padding: 0% 10%;
 }
+
+.funkySvg{
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+.funkyPath{
+    stroke: rgb(255, 220, 205);
+    fill: none;
+}
 .logoTradBox{
     transform: translate(-50%, -50%);
     position: fixed;
@@ -74,6 +84,7 @@ body{
     line-height: 0.7em;
 }
 .bigLogoBox{
+    padding-top: 10%;
     position: absolute;
     z-index: -2;
     width: 80%;
@@ -182,13 +193,12 @@ body{
 .ericName{
     font-size: max(2vw, 14px);
     font-weight: 100;
-    padding: 1rem 0rem;
     position: absolute;
     top: 0;
-    left: 2vw;
+    left: 0;
 }
 .jobsBox{
-    font-size: max(2vw, 14px);
+    font-size: max(1.8vw, 13px);
     font-weight: 100;
     position: absolute;
     bottom: 0px;
