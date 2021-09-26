@@ -33,6 +33,26 @@ body{
     background-color: var(--dark);
     position: relative;
 }
+.logoTradBox{
+    transform: translate(-50%, -50%);
+    position: fixed;
+    z-index: 1000;
+    display: none;
+    transition: 300ms ease fadeIn;
+}
+@keyframes fadeIn {
+    from{opacity: 0}
+    top{opacity: 1}
+}
+.logoTrad{
+    width: 50px;
+    animation: 3000ms linear spin infinite;
+    
+}
+@keyframes spin{
+    from{transform: rotateZ(0deg);}
+    to{transform: rotateZ(360deg);}
+}
 .menuPanel{
     position: fixed;
     top: 0;
@@ -60,15 +80,8 @@ body{
     fill: var(--darkMid);
     animation:2000ms linear blurLoop alternate infinite;
 }
-@keyframes blurLoop {
-    from{
-        
-    }
-    to{
-        
-    }
-}
 
+/*47.41 351.31*/
 /* top section */
 
 .topSection{
@@ -81,15 +94,17 @@ body{
 }
 .topTitleBox{
     height: 80%;
-    transform: rotateZ(180deg);
+    width: 100px;
 }
 .topTitle{
-    font-weight: 200;
-    line-height:0.8em;
-    writing-mode: vertical-rl;
-    text-shadow: 0 0 10px black;
+    height: 100%;
     filter: blur(0.5px);
     animation: 1000ms ease-out slideIn;
+    overflow: visible;
+}
+.topTitlePaths{
+    fill: white;
+    filter: drop-shadow(0px 0px 5px rgb(44, 44, 44));
 }
 @keyframes slideIn{
     0%{
@@ -172,4 +187,7 @@ body{
     position: absolute;
     bottom: -5%;
     left: 2vw;
+}
+.trad{
+    z-index: 1001;
 }

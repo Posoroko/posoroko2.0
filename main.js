@@ -1,28 +1,34 @@
 const topTitle_h1 =  document.getElementById('topTitle');
 const topTitleBox_div = document.getElementById('topTitleBox');
+
 const moto_p = document.querySelector('.moto');
+const subtitle_p = document.getElementById('subtitle');
+
 const menuText_p = document.getElementById('menuText');
 const menuPanel_div = document.getElementById('menuPanel');
+
 const bigLogoBox_div = document.getElementById('bigLogoBox');
 
+const logoTradBox_div = document.getElementById('logoTradBox')
 
-
-function hauteurRedimentionnable(minSize,cible, parent, largeur, direction){
-
-    let = fontSizeCount = minSize;
-
-function rechercheHauteur(cible, parent, largeur) {
-        console.log('hauteur');
-        cible.style.fontSize = fontSizeCount + 'px';
-        if(cible.offsetHeight < parent.offsetHeight * largeur) {
-            fontSizeCount ++;
-            rechercheHauteur(cible, parent, largeur);
-        }else {
-            fontSizeCount = minSize;
-        }
+const texts = {
+    moto: {
+        fr: `Définir vos besoin, votre image et vos objectifs.<br>
+            Créer le site web qui représente votre réalité.<br>
+            Construire des outils ergonomiques qui  <br>
+            servent vos utilisateurs.`,
+        eng: `Define your needs, your brand and your objectives. <br>
+            Create the website that represents your reality. <br>
+            Build ergonomic tools that serve your users.`
+    },
+    subtitle: {
+        fr: `Studio de <br> développement web <br> et de design`,
+        eng: `Web development <br> and design <br> studio`
     }
-    rechercheHauteur(cible, parent, largeur);
 }
+
+
+
 
 
 
@@ -50,6 +56,7 @@ function handleClick(e) {
         traduire(e.target);
     }
 }
+// effet paralax
 function handleScroll() {
     let gap = window.scrollY * 0.5;
     bigLogoBox_div.style.marginTop = gap + 'px';
@@ -66,7 +73,7 @@ function traduire(targ) {
         ], {
             duration: 600,
             fill: 'forwards',
-            easing: 'cubic-bezier(0,.87,1,.24)'
+            easing: 'cubic-bezier(.84,-0.01,.14,.99)'
         }
     )
     setTimeout(() => {
@@ -80,6 +87,19 @@ function traduire(targ) {
     }, 300);
 }
 
+function tradFollow(e) {
+    logoTradBox_div.style.top = e.clientY + 'px';
+    logoTradBox_div.style.left = e.clientX + 'px';
+}
+
+
+function showTradLogo(e) {
+   logoTradBox_div.style.display = 'flex';
+}
+function hideTradLogo(e) {
+    logoTradBox_div.style.display = 'none';
+ }
+
 
 
 /* EVENT LISTENERS */
@@ -88,27 +108,21 @@ window.addEventListener('resize', function(){
 });
 window.addEventListener('click', handleClick);
 window.addEventListener('scroll', handleScroll);
+window.addEventListener('mousemove', tradFollow);
 
-hauteurRedimentionnable(20, topTitle_h1, topTitleBox_div, 1);
+  
 
 
 
 
-const texts = {
-    moto: {
-        fr: `Définir vos besoin, votre image et vos objectifs.<br>
-            Créer le site web qui représente votre réalité.<br>
-            Construire des outils ergonomiques qui  <br>
-            servent vos utilisateurs.`,
-        eng: `Define your needs, your brand and your objectives. <br>
-            Create the website that represents your reality. <br>
-            Build ergonomic tools that serve your users.`
-    },
-    subtitle: {
-        fr: `Studio de <br> développement web <br> et de design`,
-        eng: `Web development <br> and design <br> studio`
-    }
+
+window.onload = () => {
+    moto_p.innerHTML = texts.moto.fr;
+    subtitle_p.innerHTML = texts.subtitle.fr;
+    
+document.querySelectorAll('.trad').forEach(item => {
+    item.addEventListener('mouseenter', showTradLogo);
+    item.addEventListener('mouseleave', hideTradLogo);
+  })
 }
 
-moto_p.innerHTML = texts.moto.fr;
-subtitle.innerHTML = texts.subtitle.fr;
