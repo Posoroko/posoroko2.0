@@ -3,6 +3,7 @@ const topTitleBox_div = document.getElementById('topTitleBox');
 
 const moto_p = document.querySelector('.moto');
 const subtitle_p = document.getElementById('subtitle');
+const informations_p = document.getElementById('informations');
 
 const menuText_p = document.getElementById('menuText');
 const menuPanel_div = document.getElementById('menuPanel');
@@ -26,6 +27,16 @@ const texts = {
     subtitle: {
         fr: `Studio de <br> développement web <br> et de design`,
         eng: `Web development <br> and design <br> studio`
+    },
+    informations: {
+       fr: `Je suis basé à Carhaix-Plouguer et suis disponible pour travailler à distance 
+            ou en personne pour vos projets de site web ou d'infographie.  Que vous ayez 
+            besoin d'un site web sur mesure ou créé à l'aide d'un système de gestion de contenu 
+            (wordpress, Webflow, ... ) nous élaborerons ensemble un projet à la hauteur de vos ambitions.`,
+        eng: `I am based in Carhaix-Plouguer and I'm available to work remotly or in person on your website or graphic design 
+        projects. Wether you need a website built custom for you or one made with a content managment system (wordpress, Webflow, ...), 
+        we will elaborate together a project that fits your ambitions.`
+
     }
 }
 
@@ -34,22 +45,7 @@ const texts = {
 
 
 
-function largeurRedimentionnable(minSize,cible, parent, largeur){
 
-    let = fontSizeCount = minSize;
-
-function rechercheLargeur(cible, parent, largeur) {
-    console.log('largeur');
-        cible.style.fontSize = fontSizeCount + 'px';
-        if(cible.offsetWidth < parent.offsetWidth * largeur) {
-            fontSizeCount ++;
-            rechercheLargeur(cible, parent, largeur);
-        }else {
-            fontSizeCount = minSize;
-        }
-    }
-    rechercheLargeur(cible, parent, largeur);
-}
 
 
 //filtre les actions 'click' sur l'object window
@@ -66,14 +62,13 @@ function handleScroll() {
 
 //traduit n'importequelle cible ayant la classs 'trad'
 function traduire(targ) {
-    console.log(targ);
     targ.animate(
         [
             {filter: 'blur(0px)'},
             {filter: 'blur(50px)'},
             {filter: 'blur(0px)'}
         ], {
-            duration: 600,
+            duration: 1500,
             fill: 'forwards',
             easing: 'cubic-bezier(.84,-0.01,.14,.99)'
         }
@@ -86,34 +81,31 @@ function traduire(targ) {
             targ.innerHTML = texts[targ.id].fr;
             targ.classList.replace('eng', 'fr');
         }
-    }, 300);
+    }, 750);
 }
 
+
+
+/*logo de traduction qui suit la souris */
 function tradFollow(e) {
     logoTradBox_div.style.top = e.clientY + 'px';
     logoTradBox_div.style.left = e.clientX + 'px';
 }
-
-
 function showTradLogo(e) {
    logoTradBox_div.style.display = 'flex';
 }
 function hideTradLogo(e) {
     logoTradBox_div.style.display = 'none';
  }
-function rollJobs() {
-    
-}
+
 
 
 /* EVENT LISTENERS */
-window.addEventListener('resize', function(){
-    largeurRedimentionnable(20, topTitle_h1, topTitleBox_div, 1);
-});
+
 window.addEventListener('click', handleClick);
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('mousemove', tradFollow);
-photoEric_img.addEventListener('click', rollJobs);
+
   
 
 
@@ -123,6 +115,7 @@ photoEric_img.addEventListener('click', rollJobs);
 window.onload = () => {
     moto_p.innerHTML = texts.moto.fr;
     subtitle_p.innerHTML = texts.subtitle.fr;
+    informations_p.innerHTML = texts.informations.fr;
     
 document.querySelectorAll('.trad').forEach(item => {
     item.addEventListener('mouseenter', showTradLogo);
