@@ -11,6 +11,8 @@ const bigLogoBox_div = document.getElementById('bigLogoBox');
 
 const logoTradBox_div = document.getElementById('logoTradBox')
 
+const photoEric_img = document.getElementById('photoEric');
+
 const texts = {
     moto: {
         fr: `Définir vos besoin, votre image et vos objectifs.<br>
@@ -99,7 +101,9 @@ function showTradLogo(e) {
 function hideTradLogo(e) {
     logoTradBox_div.style.display = 'none';
  }
-
+function rollJobs() {
+    
+}
 
 
 /* EVENT LISTENERS */
@@ -109,7 +113,7 @@ window.addEventListener('resize', function(){
 window.addEventListener('click', handleClick);
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('mousemove', tradFollow);
-
+photoEric_img.addEventListener('click', rollJobs);
   
 
 

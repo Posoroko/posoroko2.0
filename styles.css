@@ -30,8 +30,9 @@
 
 body{
     max-width: 100vw;
-    background-color: var(--dark);
+    background-color: #241e16;
     position: relative;
+    padding: 0% 10%;
 }
 .logoTradBox{
     transform: translate(-50%, -50%);
@@ -57,13 +58,13 @@ body{
     position: fixed;
     top: 0;
     right: 10%;
-    border: 1px solid red;
+
 }
 .menuPanelOpen{
     position: fixed;
     bottom: 0;
     right: 0%;
-    border: 1px solid red;
+
 }
 .menuText{
     font-size: min(40px, 10vw);
@@ -72,12 +73,13 @@ body{
 .bigLogoBox{
     position: absolute;
     z-index: -1;
-    width: 100%;
+    width: 80%;
     top: 0px;
-    filter: blur(2px);
+
 }
+
 .pathBigLogo{
-    fill: var(--darkMid);
+    fill: #292219;
     animation:2000ms linear blurLoop alternate infinite;
 }
 
@@ -87,14 +89,12 @@ body{
 .topSection{
     width: 100%;
     height: 100vh;
-    padding-left: 10vw;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 .topTitleBox{
     height: 80%;
-    width: 100px;
 }
 .topTitle{
     height: 100%;
@@ -104,7 +104,8 @@ body{
 }
 .topTitlePaths{
     fill: white;
-    filter: drop-shadow(0px 0px 5px rgb(44, 44, 44));
+    /*filter: drop-shadow(0px 0px 5px rgb(44, 44, 44));*/
+    filter: drop-shadow(0px 0px 5px black);
 }
 @keyframes slideIn{
     0%{
@@ -125,10 +126,10 @@ body{
     flex-direction: column-reverse;
 }
 .subtitle{
-    font-size: 2rem;
+    font-size: max(2vw, 16px);
     font-weight: 100;
-    padding: 0px 0px 5px 25px;
-    text-shadow: 0 0 15px rgb(48, 48, 48);
+    padding: 0px 0px 0px 50px;
+    text-shadow: 0 0 8px black;
     filter: blur(0.4px);
     animation: 1000ms ease-out blurIn;
 }
@@ -145,48 +146,81 @@ body{
 
 .motoSection{
     width: 100%;
-    height: 60vh;
-    padding: 0 10%;
-
+    padding: 15vw 0px 22vw 0px;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
+
 }
 .moto{
-    font-size: max(2rem, 2.5vw);
+    font-size: max(2.5vw, 16px);
     font-weight: 100;
     text-align: end;
-    text-shadow: 0 0 15px rgb(48, 48, 48);
-    filter: blur(0.5px);
+    text-shadow: 0 0 8px black;
+    filter: blur(0px);
 }
 .whoSection{
     width: 100%;
-    padding: 10vh 0rem;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 .photoEricBox{
-    width: 90%;
+    width: 100%;
     position: relative;
     overflow: visible;
 }
 .photoEric{
     width: 100%;
-    box-shadow: 0 0 15px;
+    box-shadow: 0 0 20px;
+    position: relative;
+    z-index: 900;
 }
 .ericName{
+    font-size: max(2vw, 14px);
     font-weight: 100;
     padding: 1rem 0rem;
     position: absolute;
     top: 0;
     left: 2vw;
+    z-index: 901;
 }
-.jobs{
-    font-size: max(1rem, 2vw);
+.jobsBox{
+    font-size: max(2vw, 14px);
     font-weight: 100;
     position: absolute;
-    bottom: -5%;
-    left: 2vw;
+    bottom: 0px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 901;
+}
+.job{
+
+    z-index: -10;
+}
+.sectionInfos{
+    width: 100%;
+    padding: 15vw 20%;
+}
+.informations{
+    font-size: max(2vw, 16px);
+    font-weight: 100;
+}
+.footer{
+    width: 100%;
+    padding-bottom: 8vw;
+}
+.logoBox{
+    width: min(25%, 200px);
+    margin: auto;
+    overflow: visible;
+}
+.pathLogo{
+    fill: none;
+    stroke: rgb(255, 219, 190);
+    filter: drop-shadow(0 0 30px rgb(255, 146, 56));
+    stroke-width:0.25;
 }
 .trad{
     z-index: 1001;
