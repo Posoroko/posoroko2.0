@@ -43,6 +43,12 @@ body{
 .funkyPath{
     stroke: rgb(255, 220, 205);
     fill: none;
+    filter: drop-shadow(0 0 0px rgb(138, 110, 91));
+    animation: 1000ms linear pulse infinite alternate;
+}
+@keyframes pulse {
+    from{filter:drop-shadow(0 0 3px rgb(138, 110, 91));}
+    to{filter:drop-shadow(0 0 5px rgb(138, 110, 91));}   
 }
 .logoTradBox{
     transform: translate(-50%, -50%);
@@ -63,9 +69,7 @@ body{
     from{transform: rotateZ(0deg);}
     to{transform: rotateZ(360deg);}
 }
-.trad{
-    /*z-index: 2000;*/
-}
+
 
 .menuPanel{
     position: fixed;

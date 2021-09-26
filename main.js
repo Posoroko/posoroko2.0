@@ -14,9 +14,19 @@ const logoTradBox_div = document.getElementById('logoTradBox')
 
 const photoEric_img = document.getElementById('photoEric');
 
+
 const funkyPath_path = document.getElementById('funkyPath');
 funkyPath_path.style.strokeDasharray = funkyPath_path.getTotalLength();
 funkyPath_path.style.strokeDashoffset = funkyPath_path.getTotalLength();
+const body = document.getElementsByTagName('body');
+const bodyHeight = body[0].clientHeight;
+let ratio = 0;
+
+
+
+
+
+
 
 const texts = {
     moto: {
@@ -62,8 +72,9 @@ function handleClick(e) {
 function handleScroll() {
     let gap = window.scrollY * 0.5;
     bigLogoBox_div.style.marginTop = gap + 'px';
-    console.log(window.scrollY);
-    funkyPath_path.style.strokeDashoffset = 2615 - window.scrollY * 0.9;
+    /* annimation du funkyPath */
+    ratio = funkyPath_path.getTotalLength() * window.scrollY / bodyHeight;
+    funkyPath_path.style.strokeDashoffset = funkyPath_path.getTotalLength() - ratio * 1.15 ;
 }
 
 //traduit n'importequelle cible ayant la classs 'trad'
