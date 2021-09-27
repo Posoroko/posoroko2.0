@@ -39,8 +39,8 @@ const texts = {
             Build ergonomic tools that serve your users.`
     },
     subtitle: {
-        fr: `Studio de <br> développement web <br> et de design`,
-        eng: `Web development <br> and design <br> studio`
+        fr: `Développement web <br> et design`,
+        eng: `Web development <br> and design`
     },
     informations: {
        fr: `Je suis basé à Carhaix-Plouguer et suis disponible pour travailler à distance 

@@ -6,13 +6,22 @@
     user-select: none;
 }
 :root {
-    --light: #f3e9e0;
+    --light: #bd8766;
     --lightMid: #A6B63D;
-    --darkMid: #375248;
-    --dark: #375a4d;
+    --darkMid: #202020;
+    --dark: #1d1915;
     /*--dark: #242622;
     --darkMid: #272925;*/
     font-size: 62.5%;
+    /*thème chocolat
+    #241e16
+    #292219
+    */
+    /*thème menthe
+    --darkMid: #375248;
+    --dark: #375a4d;
+    #f3e9e0
+    */
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300&display=swap');
@@ -30,7 +39,7 @@
 
 body{
     max-width: 100vw;
-    background-color: #241e16;
+    background-color: var(--dark);
     position: relative;
     padding: 0% 10%;
 }
@@ -41,7 +50,7 @@ body{
     right: 0;
 }
 .funkyPath{
-    stroke: rgb(255, 220, 205);
+    stroke: #bb5436;
     fill: none;
     filter: drop-shadow(0 0 0px rgb(138, 110, 91));
     animation: 1000ms linear pulse infinite alternate;
@@ -93,12 +102,13 @@ body{
     z-index: -2;
     width: 80%;
     top: 0px;
-
+    filter: blur(0.5px);
 }
 
 .pathBigLogo{
-    fill: #292219;
+    fill: var(--darkMid);
     animation:2000ms linear blurLoop alternate infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.7));
 }
 
 /*47.41 351.31*/
